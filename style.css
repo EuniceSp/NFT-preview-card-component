@@ -34,11 +34,44 @@ main{
     width: 100%;
     height: 55%;
     margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
 }
 
 .img{
     width: 100%;
     height: 100%;
+    border-radius: 7px;
+    position: relative;
+}
+
+.image-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(178, 100%, 50%);
+    border-radius: 7px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.image-overlay img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image:hover .image-overlay{
+    opacity: 0.5;
+}
+
+.card .image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 7px;
 }
 
@@ -58,6 +91,10 @@ main{
     color: hsl(0, 0%, 100%);
     font-size: 18px;
     margin-bottom: 10px;
+}
+
+.title:hover{
+    color: hsl(178, 100%, 50%);
 }
 
 .description{
@@ -150,6 +187,11 @@ main{
     color: hsl(0, 0%, 100%);
     font-weight: 400;
 }
+
+.txt-user span:hover{
+    color: hsl(178, 100%, 50%);
+}
+
 footer{
     width: 100%;
     height: 5vh;
@@ -166,4 +208,14 @@ footer{
 a{
     color: hsl(178, 100%, 50%);
     text-decoration: none;
+}
+
+@media only screen and (max-width:375px){
+    main{
+        height: 130vh;
+    }
+
+    footer{
+        height: 10vh;
+    }
 }
